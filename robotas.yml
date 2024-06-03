@@ -1,0 +1,149 @@
+robot_cfg:
+  kinematics:
+    usd_path: "/home/danicoimbra/Documents/robotas/robotas.usd"
+    usd_robot_root: "home/danicoimbra/Documents/robotas"
+    isaac_usd_path: ""
+    usd_flip_joints: {}
+    usd_flip_joint_limits: []
+
+    urdf_path: "/home/danicoimbra/Documents/robotas/urdf/robotas.urdf"
+    asset_root_path: "home/danicoimbra/Documents/robotas"
+
+    base_link: "base_link"
+    ee_link: "end_link"
+    link_names: null
+    lock_joints: null
+    extra_links: null
+
+
+    collision_link_names: ["base_link", "link_1", "link_2", "link_3", "link_4", "link_5", "link_6", "link_7", "link_8", "end_link"]
+    collision_spheres:
+      link_1:
+        - "center": [0.045, 0.049, 0.22]
+          "radius": 0.235
+      base_link:
+        - "center": [-0.029, 0.01, -0.081]
+          "radius": 0.273
+      link_2:
+        - "center": [-0.049, -0.068, 0.04]
+          "radius": 0.174
+        - "center": [-0.203, -0.067, 0.297]
+          "radius": 0.157
+        - "center": [-0.001, -0.046, -0.002]
+          "radius": 0.169
+        - "center": [-0.226, -0.01, 0.733]
+          "radius": 0.149
+        - "center": [-0.237, -0.057, 0.466]
+          "radius": 0.149
+        - "center": [-0.148, -0.094, 0.202]
+          "radius": 0.142
+        - "center": [-0.255, -0.032, 0.652]
+          "radius": 0.142
+        - "center": [-0.206, 0.05, 0.798]
+          "radius": 0.14
+      link_3:
+        - "center": [0.033, 0.152, 0.001]
+          "radius": 0.162
+        - "center": [0.27, 0.165, 0.174]
+          "radius": 0.155
+        - "center": [0.227, 0.068, 0.139]
+          "radius": 0.154
+        - "center": [0.251, 0.169, 0.094]
+          "radius": 0.145
+        - "center": [0.194, -0.016, 0.157]
+          "radius": 0.143
+        - "center": [0.194, -0.013, 0.267]
+          "radius": 0.14
+        - "center": [0.01, 0.098, 0.006]
+          "radius": 0.151
+      link_4:
+        - "center": [0.522, -0.122, -0.007]
+          "radius": 0.109
+        - "center": [0.089, -0.022, -0.001]
+          "radius": 0.108
+        - "center": [0.384, -0.089, -0.005]
+          "radius": 0.108
+        - "center": [0.23, -0.05, -0.002]
+          "radius": 0.105
+        - "center": [0.756, -0.155, 0.059]
+          "radius": 0.093
+        - "center": [0.668, -0.156, 0.062]
+          "radius": 0.094
+        - "center": [0.296, -0.072, -0.002]
+          "radius": 0.107
+        - "center": [0.823, -0.17, 0.058]
+          "radius": 0.094
+        - "center": [0.475, -0.112, -0.005]
+          "radius": 0.108
+        - "center": [0.158, -0.037, -0.003]
+          "radius": 0.108
+        - "center": [1.0, -0.209, 0.061]
+          "radius": 0.077
+        - "center": [0.05, 0.0, -0.005]
+          "radius": 0.097
+        - "center": [0.725, -0.163, -0.045]
+          "radius": 0.09
+        - "center": [0.921, -0.189, 0.069]
+          "radius": 0.077
+        - "center": [1.04, -0.199, 0.049]
+          "radius": 0.072
+        - "center": [0.765, -0.178, 0.066]
+          "radius": 0.092
+        - "center": [0.031, -0.03, -0.0]
+          "radius": 0.087
+        - "center": [0.629, -0.131, -0.047]
+          "radius": 0.064
+        - "center": [0.909, -0.17, 0.056]
+          "radius": 0.076
+        - "center": [1.018, -0.243, 0.065]
+          "radius": 0.074
+      link_5:
+        - "center": [0.454, -0.077, 0.131]
+          "radius": 0.111
+        - "center": [0.406, -0.093, 0.033]
+          "radius": 0.111
+        - "center": [0.158, -0.073, -0.079]
+          "radius": 0.111
+        - "center": [0.295, -0.102, -0.061]
+          "radius": 0.111
+        - "center": [0.014, -0.014, -0.037]
+          "radius": 0.111
+
+    collision_sphere_buffer: 0.005
+    extra_collision_spheres: {}
+    self_collision_ignore: {
+    "base_link": ["link_1"],
+    "link_1": ["base_link", "link_2"],
+    "link_2": ["link_1", "link_3"],
+    "link_3": ["link_2", "link_4"],
+    "link_4": ["link_3", "link_5"],
+    "link_5": ["link_4", "link_6"],
+    "link_6": ["link_5", "link_7"],
+    "link_7": ["link_6", "link_8"],
+    "link_8": ["link_7", "end_link"],
+    "end_link": ["link_8"],
+    }
+
+    self_collision_buffer: {
+    "base_link": 0.05,
+    "link_1": 0.05,
+    "link_2": 0.05,
+    "link_3": 0.05,
+    "link_4": 0.05,
+    "link_5": 0.05,
+    "link_6": 0.05,
+    "link_7": 0.05,
+    "link_8": 0.05,
+    "end_link": 0.05,
+    }
+
+    use_global_cumul: True
+    mesh_link_names: ["base_link", "link_1", "link_2", "link_3", "link_4", "link_5", "link_6", "link_7", "link_8", "end_link"]
+
+    cspace:
+      joint_names: ["joint0", "joint1", "joint2", "joint3", "joint4", "joint5", "joint6", "joint7", "end_joint"]
+      retract_config: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      null_space_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+      cspace_distance_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+      max_jerk: 500.0
+      max_acceleration: 15.0
